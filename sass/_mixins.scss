@@ -1,0 +1,24 @@
+@mixin border(){
+   border: 1px solid $lightgrey;
+}
+
+@mixin marginDefault(){
+    margin: 0 auto;
+}
+
+%clearfix{
+    &:after{
+        display: table;
+        clear: both;
+        content: '';
+    }
+}
+
+@mixin columnSpacing( $num_of_cols, $gutter, $width:100%  ){
+  width: ( $width - ( $gutter * ($num_of_cols - 1) ) ) / $num_of_cols;
+  margin-left: $gutter;
+  // Remove Spacing from First Child
+  &:first-child{
+    margin-left: 0;
+  }
+}
